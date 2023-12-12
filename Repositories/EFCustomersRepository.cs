@@ -13,30 +13,30 @@ public class EFCustomersRepository : ICustomersRepository
     this.dbContext = dbContext;
   }
 
-  public IEnumerable<Customer> GetAll()
+  public async Task<IEnumerable<Customer>> GetAllAsync()
   {
-    return dbContext.TMCustomer.AsNoTracking().ToList();
+    return await dbContext.TMCustomer.AsNoTracking().ToListAsync();
   }
 
-  public Customer? Get(int id)
+  public async Task<Customer?> GetAsync(int id)
   {
-    return dbContext.TMCustomer.Find(id);
+    return await dbContext.TMCustomer.FindAsync(id);
   }
 
-  public void Create(Customer cust)
+  public async Task CreateAsync(Customer cust)
   {
     dbContext.TMCustomer.Add(cust);
-    dbContext.SaveChanges();
+    await dbContext.SaveChangesAsync();
   }
 
-  public void Update(Customer updatedCustomer)
+  public async Task UpdateAsync(Customer updatedCustomer)
   {
     dbContext.TMCustomer.Update(updatedCustomer);
-    dbContext.SaveChanges();
+    await dbContext.SaveChangesAsync();
   }
 
-  public void Delete(int id)
+  public async Task DeleteAsync(int id)
   {
-    dbContext.TMCustomer.Where(cust => cust.Id == id).ExecuteDelete();
+    await dbContext.TMCustomer.Where(cust => cust.Id == id).ExecuteDeleteAsync();
   }
 }

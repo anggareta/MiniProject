@@ -4,9 +4,9 @@ namespace MiniProject.API.Repositories;
 
 public interface ICustomersRepository
 {
-  void Create(Customer cust);
-  void Delete(int id);
-  Customer? Get(int id);
-  IEnumerable<Customer> GetAll();
-  void Update(Customer updatedCustomer);
+  Task CreateAsync(Customer cust);
+  Task DeleteAsync(int id);
+  Task<Customer?> GetAsync(int id);
+  Task<IEnumerable<Customer>> GetAllAsync();
+  Task UpdateAsync(Customer updatedCustomer);
 }

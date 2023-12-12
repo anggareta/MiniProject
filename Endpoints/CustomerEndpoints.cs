@@ -12,16 +12,16 @@ public static class CustomerEndpoints
   {
     var group = routes.MapGroup("/customer").WithParameterValidation();
 
-    group.MapGet("/", (ICustomersRepository repository) => repository.GetAll().Select(cust => cust.AsDTO()));
+    group.MapGet("/", async (ICustomersRepository repository) => (await repository.GetAllAsync()).Select(cust => cust.AsDTO()));
 
-    group.MapGet("/{id}", (ICustomersRepository repository, int id) =>
+    group.MapGet("/{id}", async (ICustomersRepository repository, int id) =>
     {
-      Customer? cust = repository.Get(id);
+      Customer? cust = await repository.GetAsync(id);
       return cust is not null ? Results.Ok(cust.AsDTO()) : Results.NotFound();
     })
     .WithName(GetCustomerEndpointName);
 
-    group.MapPost("/", (ICustomersRepository repository, CreateCustomerDTO custDTO) =>
+    group.MapPost("/", async (ICustomersRepository repository, CreateCustomerDTO custDTO) =>
     {
       Customer cust = new()
       {
@@ -29,13 +29,13 @@ public static class CustomerEndpoints
         Address = custDTO.Address,
         BirthDate = custDTO.BirthDate,
       };
-      repository.Create(cust);
+      await repository.CreateAsync(cust);
       return Results.CreatedAtRoute<Customer>(GetCustomerEndpointName, new { id = cust.Id }, cust);
     });
 
-    group.MapPut("/{id}", (ICustomersRepository repository, int id, UpdateCustomerDTO updateCustDTO) =>
+    group.MapPut("/{id}", async (ICustomersRepository repository, int id, UpdateCustomerDTO updateCustDTO) =>
     {
-      Customer? existingCustomer = repository.Get(id);
+      Customer? existingCustomer = await repository.GetAsync(id);
 
       if (existingCustomer is null)
       {
@@ -46,18 +46,18 @@ public static class CustomerEndpoints
       existingCustomer.Address = updateCustDTO.Address;
       existingCustomer.BirthDate = updateCustDTO.BirthDate;
 
-      repository.Update(existingCustomer);
+      await repository.UpdateAsync(existingCustomer);
 
       return Results.NoContent();
     });
 
-    group.MapDelete("/{id}", (ICustomersRepository repository, int id) =>
+    group.MapDelete("/{id}", async (ICustomersRepository repository, int id) =>
     {
-      Customer? cust = repository.Get(id);
+      Customer? cust = await repository.GetAsync(id);
 
       if (cust is not null)
       {
-        repository.Delete(id);
+        await repository.DeleteAsync(id);
       }
 
       return Results.NoContent();

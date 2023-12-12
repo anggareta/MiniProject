@@ -11,6 +11,8 @@ public class MiniProjectContext : DbContext
   }
 
   public DbSet<Customer> TMCustomer => Set<Customer>();
+  public DbSet<Promo> TMPromo => Set<Promo>();
+  public DbSet<CustomerPromo> TTPromo => Set<CustomerPromo>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

@@ -20,3 +20,23 @@ public record UpdateCustomerDTO(
   DateTime BirthDate,
   [Required][StringLength(20)] string Address
 );
+
+public record PromoDTO(
+  int Id,
+  string PromoName
+);
+
+public record CreatePromoDTO(
+  [Required][StringLength(50)] string PromoName
+);
+
+public record UpdatePromoDTO(
+  [Required][StringLength(50)] string PromoName
+);
+
+public record CustomerPromoDTO(
+  int IdCustomer,
+  int IdPromo,
+  string CustomerName,
+  string PromoName
+);

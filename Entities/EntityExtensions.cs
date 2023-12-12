@@ -13,4 +13,13 @@ public static class EntityExtensions
       cust.Address
     );
   }
+
+  public static PromoDTO AsPromoDTO(this Promo promo)
+  {
+    return new PromoDTO(
+      promo.Id,
+      promo.PromoName
+    );
+  }
+
 }

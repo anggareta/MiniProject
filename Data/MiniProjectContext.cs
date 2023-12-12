@@ -10,7 +10,7 @@ public class MiniProjectContext : DbContext
   {
   }
 
-  public DbSet<Customer> Customers => Set<Customer>();
+  public DbSet<Customer> TMCustomer => Set<Customer>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

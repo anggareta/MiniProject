@@ -40,3 +40,8 @@ public record CustomerPromoDTO(
   string CustomerName,
   string PromoName
 );
+
+public record CustPromoRecDTO(
+  int IdCustomer,
+  int IdPromo
+);

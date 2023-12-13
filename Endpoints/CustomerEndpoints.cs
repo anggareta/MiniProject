@@ -8,7 +8,7 @@ public static class CustomerEndpoints
 {
   const string GetCustomerEndpointName = "GetCustomer";
 
-  public static RouteGroupBuilder MapMiniEndpoints(this IEndpointRouteBuilder routes)
+  public static RouteGroupBuilder MapCustomerEndpoints(this IEndpointRouteBuilder routes)
   {
     var group = routes.MapGroup("/customer").WithParameterValidation();
 

@@ -22,4 +22,13 @@ public static class EntityExtensions
     );
   }
 
+  public static CustomerPromoDTO AsCustPromo(this CustPromOut custPromOut)
+  {
+    return new CustomerPromoDTO(
+      custPromOut.IdCustomer,
+      custPromOut.IdPromo,
+      custPromOut.CustomerName,
+      custPromOut.PromoName
+  );
+  }
 }

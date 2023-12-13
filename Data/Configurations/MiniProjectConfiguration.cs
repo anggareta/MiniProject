@@ -16,7 +16,7 @@ public class MiniProjectConfiguration : IEntityTypeConfiguration<CustomerPromo>
       .OnDelete(DeleteBehavior.Cascade);
 
     builder.HasOne(cp => cp.Promo)
-      .WithMany(c => c.CustomerPromos)
+      .WithMany(p => p.CustomerPromos)
       .HasForeignKey(cp => cp.IdPromo)
       .OnDelete(DeleteBehavior.Cascade);
   }

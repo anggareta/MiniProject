@@ -68,15 +68,15 @@ public class EFCustPromoRepository : ICustPromoRepository
 
   public async Task<IEnumerable<Promo>> GetPromoAsync(int CustomerId)
   {
-    var C = dbContext.TMPromo;
+    var P = dbContext.TMPromo;
     var T = dbContext.TTPromo;
-    var o = from c in C
-            join x in T on c.Id equals x.IdCustomer
-            where x.IdPromo == CustomerId
+    var o = from p in P
+            join x in T on p.Id equals x.IdPromo
+            where x.IdCustomer == CustomerId
             select new Promo
             {
-              Id = c.Id,
-              PromoName = c.PromoName
+              Id = p.Id,
+              PromoName = p.PromoName
             };
 
     return await o.ToListAsync();

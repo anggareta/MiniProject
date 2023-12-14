@@ -1,0 +1,797 @@
+{
+	"info": {
+		"_postman_id": "30be4e5d-220b-4190-97fa-b0ee2d1ade15",
+		"name": "Mini Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5495194"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "/customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{domain}}/customer",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/customer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{domain}}/customer",
+									"host": [
+										"{{protocol}}{{domain}}"
+									],
+									"path": [
+										"customer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 06:59:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Ayus\",\n        \"birthDate\": \"1981-03-11T00:00:00\",\n        \"address\": \"Pasir Impun\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Icha\",\n        \"birthDate\": \"1994-11-15T00:00:00\",\n        \"address\": \"Maleber\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Zeta\",\n        \"birthDate\": \"2015-10-19T00:00:00\",\n        \"address\": \"Ks.Tubun\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Kena\",\n        \"birthDate\": \"2017-03-21T00:00:00\",\n        \"address\": \"Palmerah\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Deba\",\n        \"birthDate\": \"2021-06-05T00:00:00\",\n        \"address\": \"Parung Panjang\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "/customer/{customer_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{domain}}/customer/1",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/customer/{customer_id}",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{domain}}/customer/1",
+									"host": [
+										"{{protocol}}{{domain}}"
+									],
+									"path": [
+										"customer",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 07:00:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Ayus\",\n    \"birthDate\": \"1981-03-11T00:00:00\",\n    \"address\": \"Pasir Impun\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Maya\",\r\n    \"birthDate\": \"2003-03-11\",\r\n    \"address\": \"Cikaso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}{{domain}}/customer",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Maya\",\r\n    \"birthDate\": \"2003-03-11T00:00:00\",\r\n    \"address\": \"Cikaso\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}{{domain}}/customer",
+									"host": [
+										"{{protocol}}{{domain}}"
+									],
+									"path": [
+										"customer"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 07:03:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/customer/6"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"name\": \"Maya\",\n    \"birthDate\": \"2003-03-11T00:00:00\",\n    \"address\": \"Cikaso\",\n    \"customerPromos\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/customer/{customer_id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Maya Meong\",\r\n    \"birthDate\": \"2003-03-11\",\r\n    \"address\": \"Cikaso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}{{domain}}/customer/6",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"customer",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customer/{customer_id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{domain}}/customer/6",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"customer",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Promo",
+			"item": [
+				{
+					"name": "/promo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{domain}}/promo",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"promo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/promo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{domain}}/promo",
+									"host": [
+										"{{protocol}}{{domain}}"
+									],
+									"path": [
+										"promo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 07:06:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"promoName\": \"Tahun Baru\",\n        \"discount\": 11.26\n    },\n    {\n        \"id\": 2,\n        \"promoName\": \"Hari Raya Idul Fitri\",\n        \"discount\": 13.33\n    },\n    {\n        \"id\": 3,\n        \"promoName\": \"Libur Sekolah\",\n        \"discount\": 8.25\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "/promo/{promo_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{domain}}/promo/1",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"promo",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/promo/{promo_id}",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{domain}}/promo/1",
+									"host": [
+										"{{protocol}}{{domain}}"
+									],
+									"path": [
+										"promo",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 07:07:06 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"promoName\": \"Tahun Baru\",\n    \"discount\": 11.26\n}"
+						}
+					]
+				},
+				{
+					"name": "/promo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"promoName\": \"Ulang Tahun untuk Jomblo\",\r\n    \"discount\": 90.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}{{domain}}/promo",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"promo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/promo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"promoName\": \"Ulang Tahun untuk Jomblo\",\r\n    \"discount\": 90.99\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}{{domain}}/promo",
+									"host": [
+										"{{protocol}}{{domain}}"
+									],
+									"path": [
+										"promo"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 07:09:06 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/promo/4"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"promoName\": \"Ulang Tahun untuk Jomblo\",\n    \"discount\": 90.99,\n    \"customerPromos\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/promo/{promo_id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"promoName\": \"Ulang Tahun untuk Jomblo Akut\",\r\n    \"discount\": 80.88\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}{{domain}}/promo/4",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"promo",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/promo/{promo_id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{domain}}/promo/4",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"promo",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Promo for Customer",
+			"item": [
+				{
+					"name": "/custpromo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{domain}}/custpromo",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"custpromo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/custpromo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{domain}}/custpromo",
+									"host": [
+										"{{protocol}}{{domain}}"
+									],
+									"path": [
+										"custpromo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 07:11:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"idCustomer\": 1,\n        \"idPromo\": 1,\n        \"customerName\": \"Ayus\",\n        \"promoName\": \"Tahun Baru\"\n    },\n    {\n        \"idCustomer\": 5,\n        \"idPromo\": 1,\n        \"customerName\": \"Deba\",\n        \"promoName\": \"Tahun Baru\"\n    },\n    {\n        \"idCustomer\": 1,\n        \"idPromo\": 2,\n        \"customerName\": \"Ayus\",\n        \"promoName\": \"Hari Raya Idul Fitri\"\n    },\n    {\n        \"idCustomer\": 2,\n        \"idPromo\": 2,\n        \"customerName\": \"Icha\",\n        \"promoName\": \"Hari Raya Idul Fitri\"\n    },\n    {\n        \"idCustomer\": 5,\n        \"idPromo\": 2,\n        \"customerName\": \"Deba\",\n        \"promoName\": \"Hari Raya Idul Fitri\"\n    },\n    {\n        \"idCustomer\": 3,\n        \"idPromo\": 3,\n        \"customerName\": \"Zeta\",\n        \"promoName\": \"Libur Sekolah\"\n    },\n    {\n        \"idCustomer\": 4,\n        \"idPromo\": 3,\n        \"customerName\": \"Kena\",\n        \"promoName\": \"Libur Sekolah\"\n    },\n    {\n        \"idCustomer\": 5,\n        \"idPromo\": 3,\n        \"customerName\": \"Deba\",\n        \"promoName\": \"Libur Sekolah\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "/custpromo/bycustomer/{customer_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{domain}}/custpromo/bycustomer/1",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"custpromo",
+								"bycustomer",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/custpromo/bycustomer/{customer_id}",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{domain}}/custpromo/bycustomer/1",
+									"host": [
+										"{{protocol}}{{domain}}"
+									],
+									"path": [
+										"custpromo",
+										"bycustomer",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 07:11:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"promoName\": \"Tahun Baru\",\n        \"discount\": 11.26\n    },\n    {\n        \"id\": 2,\n        \"promoName\": \"Hari Raya Idul Fitri\",\n        \"discount\": 13.33\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "/custpromo/bypromo/{promo_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{domain}}/custpromo/bypromo/1",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"custpromo",
+								"bypromo",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/custpromo/bycustomer/{customer_id} Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{domain}}/custpromo/bypromo/1",
+									"host": [
+										"{{protocol}}{{domain}}"
+									],
+									"path": [
+										"custpromo",
+										"bypromo",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 07:12:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Ayus\",\n        \"birthDate\": \"1981-03-11T00:00:00\",\n        \"address\": \"Pasir Impun\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Deba\",\n        \"birthDate\": \"2021-06-05T00:00:00\",\n        \"address\": \"Parung Panjang\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "/custpromo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCustomer\": 3,\r\n    \"idPromo\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}{{domain}}/custpromo",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"custpromo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:8080/custpromo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idCustomer\": 3,\r\n    \"idPromo\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}{{domain}}/custpromo",
+									"host": [
+										"{{protocol}}{{domain}}"
+									],
+									"path": [
+										"custpromo"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 07:13:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Location",
+									"value": "/custpromo"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"idCustomer\": 3,\n    \"idPromo\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "/custpromo/{customer_id}/{promo_id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{domain}}/custpromo/3/2",
+							"host": [
+								"{{protocol}}{{domain}}"
+							],
+							"path": [
+								"custpromo",
+								"3",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5296",
+					"host": [
+						"localhost"
+					],
+					"port": "5296"
+				}
+			},
+			"response": []
+		}
+	]
+}

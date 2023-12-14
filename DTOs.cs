@@ -12,26 +12,29 @@ public record CustomerDTO(
 public record CreateCustomerDTO(
   [Required][StringLength(50)] string Name,
   DateTime BirthDate,
-  [Required][StringLength(20)] string Address
+  [Required][StringLength(100)] string Address
 );
 
 public record UpdateCustomerDTO(
   [Required][StringLength(50)] string Name,
   DateTime BirthDate,
-  [Required][StringLength(20)] string Address
+  [Required][StringLength(100)] string Address
 );
 
 public record PromoDTO(
   int Id,
-  string PromoName
+  string PromoName,
+  [Range(0, 100)] decimal Discount
 );
 
 public record CreatePromoDTO(
-  [Required][StringLength(50)] string PromoName
+  [Required][StringLength(50)] string PromoName,
+  [Range(0, 100)] decimal Discount
 );
 
 public record UpdatePromoDTO(
-  [Required][StringLength(50)] string PromoName
+  [Required][StringLength(50)] string PromoName,
+  [Range(0, 100)] decimal Discount
 );
 
 public record CustomerPromoDTO(

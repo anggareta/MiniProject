@@ -18,7 +18,8 @@ public static class EntityExtensions
   {
     return new PromoDTO(
       promo.Id,
-      promo.PromoName
+      promo.PromoName,
+      promo.Discount
     );
   }
 

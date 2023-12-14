@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace MiniProject.API.Data.Configurations;
 
-public class MiniProjectConfiguration : IEntityTypeConfiguration<CustomerPromo>
+public class MPConfigurationCP : IEntityTypeConfiguration<CustomerPromo>
 {
   public void Configure(EntityTypeBuilder<CustomerPromo> builder)
   {
@@ -19,6 +19,15 @@ public class MiniProjectConfiguration : IEntityTypeConfiguration<CustomerPromo>
       .WithMany(p => p.CustomerPromos)
       .HasForeignKey(cp => cp.IdPromo)
       .OnDelete(DeleteBehavior.Cascade);
+  }
+
+}
+
+public class MPConfigurationPromo : IEntityTypeConfiguration<Promo>
+{
+  public void Configure(EntityTypeBuilder<Promo> builder)
+  {
+    builder.Property(promo => promo.Discount).HasPrecision(5, 2);
   }
 
 }

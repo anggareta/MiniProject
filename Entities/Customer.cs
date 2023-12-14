@@ -13,7 +13,7 @@ public class Customer
   public DateTime BirthDate { get; set; }
 
   [Required]
-  [StringLength(20)]
+  [StringLength(100)]
   public required string Address { get; set; }
 
   public ICollection<CustomerPromo>? CustomerPromos { get; set; }

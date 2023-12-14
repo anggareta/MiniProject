@@ -76,7 +76,8 @@ public class EFCustPromoRepository : ICustPromoRepository
             select new Promo
             {
               Id = p.Id,
-              PromoName = p.PromoName
+              PromoName = p.PromoName,
+              Discount = p.Discount
             };
 
     return await o.ToListAsync();
@@ -126,10 +127,7 @@ public class EFCustPromoRepository : ICustPromoRepository
 
   public async Task DeleteAsync(int CustomerId, int PromoId)
   {
-    // await (from x in dbContext.TTPromo
-    //        where x.IdCustomer == cpr.IdCustomer && x.IdPromo == cpr.IdPromo
-    //        select x).ExecuteDeleteAsync();
-    await dbContext.TTPromo.Where(cp => cp.IdCustomer == CustomerId).ExecuteDeleteAsync();
+    await dbContext.TTPromo.Where(cp => cp.IdCustomer == CustomerId && cp.IdPromo == PromoId).ExecuteDeleteAsync();
   }
 
 }

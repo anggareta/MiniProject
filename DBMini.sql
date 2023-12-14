@@ -8,18 +8,20 @@ GO
 
 USE [DBMini]
 GO
+
 IF NOT EXISTS (SELECT *
 FROM sysobjects
 WHERE name='TMCustomer' and xtype='U')
 BEGIN
   CREATE TABLE TMCustomer
   (
-    Id INT PRIMARY KEY IDENTITY (1, 1),
-    Name VARCHAR(100),
-    BirthDate DATETIME2,
-    Address VARCHAR(100)
+    [Id] INT PRIMARY KEY IDENTITY (1, 1),
+    [Name] VARCHAR(100),
+    [BirthDate] DATETIME2,
+    [Address] VARCHAR(100)
   )
 END
+GO
 
 IF NOT EXISTS (SELECT *
 FROM sysobjects
@@ -27,7 +29,39 @@ WHERE name='TMPromo' and xtype='U')
 BEGIN
   CREATE TABLE TMPromo
   (
-    Id INT PRIMARY KEY IDENTITY (1, 1),
-    PromoName VARCHAR(100)
+    [Id] INT PRIMARY KEY IDENTITY (1, 1),
+    [PromoName] VARCHAR(100),
+    [Discount] decimal(5,2)
   )
 END
+GO
+
+IF NOT EXISTS (SELECT *
+FROM sysobjects
+WHERE name='TTPromo' and xtype='U')
+BEGIN
+  CREATE TABLE TTPromo
+  (
+    [IdCustomer] int NOT NULL,
+    [IdPromo] int NOT NULL
+  )
+END
+GO
+
+ALTER TABLE [TTPromo] 
+ADD CONSTRAINT [PK_TTPromo] PRIMARY KEY CLUSTERED (IdCustomer, IdPromo)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+ON [PRIMARY]
+GO
+
+ALTER TABLE [TTPromo] 
+ADD CONSTRAINT [FK_TTPromo_TMCustomer_IdCustomer] FOREIGN KEY (IdCustomer) REFERENCES TMCustomer(Id) 
+ON DELETE CASCADE 
+ON UPDATE NO ACTION
+GO
+
+ALTER TABLE [TTPromo] 
+ADD CONSTRAINT [FK_TTPromo_TMPromo_IdPromo] FOREIGN KEY (IdPromo) REFERENCES TMPromo(Id) 
+ON DELETE CASCADE 
+ON UPDATE NO ACTION
+GO

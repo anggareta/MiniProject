@@ -2,7 +2,7 @@ using MiniProject.API.Entities;
 
 namespace MiniProject.API.Repositories;
 
-public class InMemCustomersRepository : ICustomersRepository
+public class MemCustomersRepository : ICustomersRepository
 {
   private readonly List<Customer> customer = new()
   {
@@ -20,8 +20,8 @@ public class InMemCustomersRepository : ICustomersRepository
     },
     new Customer(){
       Id = 3,
-      Name = "Zeta",
-      BirthDate = new DateTime(2015,10,15),
+      Name = "ZetDebKen",
+      BirthDate = new DateTime(2015,11,15),
       Address = "Parung Panjang",
     }
   };

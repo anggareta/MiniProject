@@ -35,8 +35,8 @@ namespace MiniProject.API.Data.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
@@ -53,10 +53,10 @@ namespace MiniProject.API.Data.Migrations
 
             modelBuilder.Entity("MiniProject.API.Entities.CustomerPromo", b =>
                 {
-                    b.Property<int?>("IdCustomer")
+                    b.Property<int>("IdCustomer")
                         .HasColumnType("int");
 
-                    b.Property<int?>("IdPromo")
+                    b.Property<int>("IdPromo")
                         .HasColumnType("int");
 
                     b.HasKey("IdCustomer", "IdPromo");
@@ -73,6 +73,10 @@ namespace MiniProject.API.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Discount")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<string>("PromoName")
                         .IsRequired()

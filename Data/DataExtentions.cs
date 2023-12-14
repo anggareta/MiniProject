@@ -48,9 +48,9 @@ public static class DataSeeder
     if (!context.TMPromo.Any())
     {
       context.TMPromo.AddRange(
-        new Promo() { PromoName = "Tahun Baru" },
-        new Promo() { PromoName = "Hari Raya Idul Fitri" },
-        new Promo() { PromoName = "Libur Sekolah" }
+        new Promo() { PromoName = "Tahun Baru", Discount = 11.26M },
+        new Promo() { PromoName = "Hari Raya Idul Fitri", Discount = 13.33M },
+        new Promo() { PromoName = "Libur Sekolah", Discount = 8.25M }
       );
       context.SaveChanges();
     }
@@ -60,6 +60,7 @@ public static class DataSeeder
       context.TTPromo.AddRange(
         new CustomerPromo() { IdCustomer = 1, IdPromo = 1 },
         new CustomerPromo() { IdCustomer = 1, IdPromo = 2 },
+        new CustomerPromo() { IdCustomer = 2, IdPromo = 2 },
         new CustomerPromo() { IdCustomer = 3, IdPromo = 3 },
         new CustomerPromo() { IdCustomer = 4, IdPromo = 3 },
         new CustomerPromo() { IdCustomer = 5, IdPromo = 3 },

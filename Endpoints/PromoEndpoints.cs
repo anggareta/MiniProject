@@ -26,6 +26,7 @@ public static class PromoEndpoints
       Promo promo = new()
       {
         PromoName = promoDTO.PromoName,
+        Discount = promoDTO.Discount
       };
 
       await repository.CreateAsync(promo);
@@ -42,6 +43,7 @@ public static class PromoEndpoints
       }
 
       existingPromo.PromoName = updatePromoDTO.PromoName;
+      existingPromo.Discount = updatePromoDTO.Discount;
       await repository.UpdateAsync(existingPromo);
       return Results.NoContent();
     });

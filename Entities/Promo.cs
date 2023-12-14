@@ -10,5 +10,8 @@ public class Promo
   [StringLength(50)]
   public required string PromoName { get; set; }
 
+  [Range(0, 100)]
+  public decimal Discount { get; set; }
+
   public ICollection<CustomerPromo>? CustomerPromos { get; set; }
 }
